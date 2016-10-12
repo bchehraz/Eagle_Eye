@@ -53,4 +53,8 @@ def camBtn_clicked():
 	print ("webcam button was clicked")
 
 if __name__ == '__main__':
+<<<<<<< HEAD
 	window()
+=======
+	window()
+>>>>>>> 444ee328d08eeb79719fcb1afc7dea9285b69a31
