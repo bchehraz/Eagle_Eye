@@ -3,7 +3,6 @@ import cv2
 import datetime
 import time
 import argparse
-import imutils
 
 # Args
 ap = argparse.ArgumentParser()
@@ -42,7 +41,6 @@ while(True):
 	#Timestamp, this was copy-pasted, NEEDS TO BE EDITED TO AVOID PLAGARISM
 	cv2.putText(frame, datetime.datetime.now().strftime("%A %d %B %Y %I:%M:%S%p"),
 		(10, frame.shape[0] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.35, (0, 0, 255), 1)
-	#cnts = cv2.findContours(threshold,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)[0]
 	thresh = cv2.dilate(threshold, None, iterations=2)
 	cnts = cv2.findContours(threshold.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[0]
 	x,y,w,h = cv2.boundingRect(cnts)
