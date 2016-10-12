@@ -47,6 +47,7 @@ def importBtn_clicked(self):
 	win2.setGeometry(100,100,300,280)
 	win2.setWindowTitle("Eagle Eye")
 	win2.show()
+	#app.exec_()
 	print ("import button was clicked")
 
 def camBtn_clicked():
