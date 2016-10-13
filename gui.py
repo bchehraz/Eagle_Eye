@@ -2,6 +2,7 @@ import os,sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication,QPushButton,QDialog
 from PyQt5.QtGui import QPixmap
+import tracking
 
 def window():
 	app = QApplication(sys.argv)
@@ -47,10 +48,11 @@ def importBtn_clicked(self):
 	win2.setGeometry(100,100,300,280)
 	win2.setWindowTitle("Eagle Eye")
 	win2.show()
-	print ("import button was clicked")
+	path = None
+	tracking.play(True, path)
 
 def camBtn_clicked():
-	print ("webcam button was clicked")
+	tracking.play(False, 0)
 
 if __name__ == '__main__':
 <<<<<<< HEAD
