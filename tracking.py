@@ -1,4 +1,4 @@
-#Quentin Minor, Babak Chehraz, 
+#Quentin Minor, Babak Chehraz, Shaikh Sultani
 import numpy
 import cv2
 import datetime
@@ -8,7 +8,8 @@ def getVideo(tf, path):#Get video from path or from webcam
 	if tf == False:
 		return cv2.VideoCapture(0)
 	else:
-		return cv2.VideoCapture(path)
+		#return cv2.VideoCapture(path)
+		return cv2.VideoCapture("C:\\users\\quentin\\documents\\nope.avi")
 
 def init(G):#initialzie first frame
 	return G
@@ -26,6 +27,8 @@ def play(tf, path, pause):
 	while(True):
 		# Capture frame-by-frame
 		ret, frame = cap.read()
+		if not ret:
+			break;
 		# Create Background Mask
 		gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 		gray = cv2.GaussianBlur(gray, (sx, sy), 0)
