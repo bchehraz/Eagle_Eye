@@ -1,4 +1,4 @@
-import os, sys
+import os, sys, tracking
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication,QPushButton,QDialog
 from PyQt5.QtGui import QPixmap
@@ -42,9 +42,12 @@ class window(QtWidgets.QWidget):
 		self.setGeometry(100, 100, 300, 280)
 		self.camBtn.move(200,200)
 		print ("import button was clicked")
+		tracking.play(True, path, 1)
+		
 
-	def camBtn_clicked():
+	def camBtn_clicked(self):
 		print ("webcam button was clicked")
+		tracking.play(False, 0, 0)
 
 if __name__ == '__main__':
 	window()
