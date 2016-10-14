@@ -3,13 +3,14 @@ import numpy
 import cv2
 import datetime
 import time
+#import msvcrt 
 
 def getVideo(tf, path):#Get video from path or from webcam
 	if tf == False:
 		return cv2.VideoCapture(0)
 	else:
 		#return cv2.VideoCapture(path)
-		return cv2.VideoCapture("C:\\users\\quentin\\documents\\nope.avi")
+		return cv2.VideoCapture("/Users/hsultani/Downloads/nope.avi.mp4")
 
 def init(G):#initialzie first frame
 	return G
@@ -55,6 +56,15 @@ def play(tf, path, pause):
 		#Exit with the Q key, will figure out how to change to esc
 		if cv2.waitKey(1) & 0xFF == ord('q'):
 			break
+
+		#key = msvcrt.getch() 
+		#if key == 'q': 
+		#	break;
+		#if key == ' ': 
+		#	cv2. waitKey(0) 
+
+
 	# Cleanup
 	cap.release()
 	cv2.destroyAllWindows()
+
