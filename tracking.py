@@ -54,8 +54,6 @@ def play(tf, path, pause):
 		#Reinitialize first frame
 		firstFrame = init(gray)
 		#Exit with the Q key, will figure out how to change to esc
-		if cv2.waitKey(1) & 0xFF == ord('q'):
-			break
 
 		key = msvcrt.getch() 
 		if key == 'q': 
