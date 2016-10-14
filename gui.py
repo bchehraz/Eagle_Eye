@@ -10,13 +10,16 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication,QPushButton,QDialog
 from PyQt5.QtGui import QPixmap
 
+#globally defined QApplication
 app = QApplication(sys.argv)
 
+#class for window
 class window(QtWidgets.QWidget):	
 	def __init__(self):
 		super().__init__()
 		self.init_ui()
 	
+	# Initial window dialog 
 	def init_ui(self):
 		logo = QtWidgets.QLabel(self)
 		logo.setGeometry(75, 10, 128, 128)
@@ -45,22 +48,25 @@ class window(QtWidgets.QWidget):
 		self.show()
 		sys.exit(app.exec_())
 
+	# Start file explorer to open video file - babak
 	def importBtn_clicked(self):
-		self.setGeometry(100, 100, 300, 280)
-		print ("import button was clicked")
 		d = QtWidgets.QFileDialog(self)
 		d.setFileMode(QtWidgets.QFileDialog.AnyFile)
-		d.selectNameFilter("Py files only (*.py)")
+		d.selectNameFilter("AVI video files only! (*.*)")
 		filename = "g"	
 		if d.exec_():
 			filename = d.selectedFiles()
-		print (filename)
-		tracking.play(True, filename, 1)
-		
+		path = ""
+		for c in str(filename):
+			if c != '[' and c != ']' and c != '\'':
+				if c == '/':
+					path += "\\"
+				else:
+					path += str(c)
+		tracking.play(True, path, 1)
 
 	def camBtn_clicked(self):
-		print ("webcam button was clicked")
 		tracking.play(False, 0, 0)
-
+		
 if __name__ == '__main__':
 	window()
