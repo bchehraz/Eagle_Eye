@@ -1,3 +1,10 @@
+"""
+ Course: CST 205 @ CSU Monterey Bay
+ Author: Babak Chehraz
+ Abstract: This program simply displays a GUI that allows the user to either select a path
+ to a video file or use their webcam instead. Then, it will launch tracking.py, the opencv
+ project itself.
+"""
 import os, sys, tracking
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication,QPushButton,QDialog
@@ -41,19 +48,14 @@ class window(QtWidgets.QWidget):
 	def importBtn_clicked(self):
 		self.setGeometry(100, 100, 300, 280)
 		print ("import button was clicked")
-		d = QtWidgets.QFileDialog()
+		d = QtWidgets.QFileDialog(self)
 		d.setFileMode(QtWidgets.QFileDialog.AnyFile)
-		d.setFilter("Text files (*.txt)")
+		d.selectNameFilter("Py files only (*.py)")
 		filename = "g"	
 		if d.exec_():
 			filename = d.selectedFiles()
-			f = open(filename, 'r')
-			
-			#with f:
-			#	data = f.read()
-			#	self.contents.setText(data)
 		print (filename)
-		tracking.play(True, path, 1)
+		tracking.play(True, filename, 1)
 		
 
 	def camBtn_clicked(self):
