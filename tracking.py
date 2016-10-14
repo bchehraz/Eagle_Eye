@@ -1,17 +1,14 @@
-#Quentin Minor, Babak Chehraz, Shaikh Sultani
+#Quentin Minor, Babak Chehraz, 
 import numpy
 import cv2
 import datetime
 import time
-import msvcrt 
-
 
 def getVideo(tf, path):#Get video from path or from webcam
 	if tf == False:
 		return cv2.VideoCapture(0)
 	else:
 		return cv2.VideoCapture(path)
-		#return cv2.VideoCapture("path")
 
 def init(G):#initialzie first frame
 	return G
@@ -26,15 +23,9 @@ def play(tf, path, pause):
 	res = 60
 	#Video Object
 	cap = getVideo(tf, path)
-	key = 0
 	while(True):
-		if msvcrt.kbhit():
-			key = ord(msvcrt.getche())
-			print(sx)
 		# Capture frame-by-frame
 		ret, frame = cap.read()
-		if not ret:
-			break;
 		# Create Background Mask
 		gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 		gray = cv2.GaussianBlur(gray, (sx, sx), 0)
@@ -61,19 +52,12 @@ def play(tf, path, pause):
 		#Exit with the Q key
 		if cv2.waitKey(1) & 0xFF == ord('q'):
 			break
-		if key == 46 and sx <= 255: # dot to increase 
-			sx = sx + sxMod 
-		if key == 44 and sx >= 1: # dot to decrease
-			sx = sx - sxMod 
-		#buttons that pause 
-		if tf == True:
-			if key == 'q': 
-				break;
-			if key == ' ': 
-				cv2. waitKey(0)
-
-
+		if cv2.waitKey(1) & 0xFF == ord('.'):
+			sx+= sxMod
+			print(sx)
+		if cv2.waitKey(1) & 0xFF == ord(','):
+			sx -= sxMod
+			print(sx)
 	# Cleanup
 	cap.release()
 	cv2.destroyAllWindows()
-
