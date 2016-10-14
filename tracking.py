@@ -57,6 +57,7 @@ def play(tf, path, pause):
 		firstFrame = init(gray)
 		#Exit with the Q key, will figure out how to change to esc
 
+		#buttons that pause 
 		if path != "" 
 			key = msvcrt.getch() 
 			if key == 'q': 
