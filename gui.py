@@ -6,6 +6,10 @@
  project itself.
  https://github.com/bchehraz/Eagle_Eye
 """
+#Eagle Eye
+#Quentin Minor, Babak Chehraz
+#10/14/16
+#CST 205
 import os, sys, tracking
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication,QPushButton,QDialog
