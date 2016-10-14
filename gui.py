@@ -55,12 +55,11 @@ class window(QtWidgets.QWidget):
 		if d.exec_():
 			filename = d.selectedFiles()
 		print (filename)
-		tracking.play(True, filename, 1)
-		
+		tracking.play(True, filename, 1)		
 
 	def camBtn_clicked(self):
 		print ("webcam button was clicked")
 		tracking.play(False, 0, 0)
-
+		
 if __name__ == '__main__':
 	window()
