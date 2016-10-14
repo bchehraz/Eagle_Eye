@@ -58,19 +58,19 @@ def play(tf, path, pause):
 		#Exit with the Q key, will figure out how to change to esc
 
 		#buttons that pause 
-		if path != "" 
+		if path != "":
 			key = msvcrt.getch() 
 			if key == 'q': 
 				break;
 			if key == ' ': 
 				cv2. waitKey(0)
-			if key == '.' and sx <= 255 # dot to increase 
+			if key == '.' and sx <= 255: # dot to increase 
 				sx = sx + sxMod 
-			if key == ',' and sx >= 1 # dot to decrease
+			if key == ',' and sx >= 1: # dot to decrease
 				sx = sx - sxMod 
-			if key == 'k' and sy <= 255 # decrease 
+			if key == 'k' and sy <= 255: # decrease 
 				sy = sy + syMod
-			if key == 'l' and sy >= 1 # increase 
+			if key == 'l' and sy >= 1: # increase 
 				sy = sy - syMod
 
 
