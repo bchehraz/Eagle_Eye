@@ -1,4 +1,8 @@
-#Quentin Minor, Babak Chehraz, 
+#Quentin Minor, Babak Chehraz
+#Author: Quentin Minor
+#10/14/16
+#This file handles video opening, playing, and motion tracking
+#https://github.com/bchehraz/Eagle_Eye
 import numpy
 import cv2
 import datetime

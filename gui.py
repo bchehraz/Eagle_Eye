@@ -4,6 +4,7 @@
  Abstract: This program simply displays a GUI that allows the user to either select a path
  to a video file or use their webcam instead. Then, it will launch tracking.py, the opencv
  project itself.
+ https://github.com/bchehraz/Eagle_Eye
 """
 import os, sys, tracking
 from PyQt5 import QtWidgets
