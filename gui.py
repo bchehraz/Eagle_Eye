@@ -55,6 +55,7 @@ class window(QtWidgets.QWidget):
 		if d.exec_():
 			filename = d.selectedFiles()
 		print (filename)
+		##
 		tracking.play(True, filename, 1)
 		
 
