@@ -57,11 +57,11 @@ def play(tf, path, pause):
 		if cv2.waitKey(1) & 0xFF == ord('q'):
 			break
 
-		#key = msvcrt.getch() 
-		#if key == 'q': 
-		#	break;
-		#if key == ' ': 
-		#	cv2. waitKey(0) 
+		key = msvcrt.getch() 
+		if key == 'q': 
+			break;
+		if key == ' ': 
+			cv2. waitKey(0) 
 
 
 	# Cleanup
