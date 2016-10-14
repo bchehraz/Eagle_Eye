@@ -20,6 +20,8 @@ def play(tf, path, pause):
 	bg = cv2.createBackgroundSubtractorMOG2()
 	sx = 21 #Must be postive and odd
 	sy = 21 #Must be positive & odd
+	sxMod = 2
+	syMod = 2
 	firstFrame = None
 	i = 0
 	res = 60
@@ -55,11 +57,20 @@ def play(tf, path, pause):
 		firstFrame = init(gray)
 		#Exit with the Q key, will figure out how to change to esc
 
-		key = msvcrt.getch() 
-		if key == 'q': 
-			break;
-		if key == ' ': 
-			cv2. waitKey(0) 
+		if path != "" 
+			key = msvcrt.getch() 
+			if key == 'q': 
+				break;
+			if key == ' ': 
+				cv2. waitKey(0)
+			if key == '.' && sx <= 255 # dot to increase 
+				sx = sx + sxMod 
+			if key == ',' && sx >= 1 # dot to decrease
+				sx = sx - sxMod 
+			if key == 'k' && sy <= 255 # decrease 
+				sy = sy + syMod
+			if key == 'l' && sy >= 1 # increase 
+				sy = sy - syMod
 
 
 	# Cleanup
