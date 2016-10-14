@@ -63,13 +63,13 @@ def play(tf, path, pause):
 				break;
 			if key == ' ': 
 				cv2. waitKey(0)
-			if key == '.' && sx <= 255 # dot to increase 
+			if key == '.' and sx <= 255 # dot to increase 
 				sx = sx + sxMod 
-			if key == ',' && sx >= 1 # dot to decrease
+			if key == ',' and sx >= 1 # dot to decrease
 				sx = sx - sxMod 
-			if key == 'k' && sy <= 255 # decrease 
+			if key == 'k' and sy <= 255 # decrease 
 				sy = sy + syMod
-			if key == 'l' && sy >= 1 # increase 
+			if key == 'l' and sy >= 1 # increase 
 				sy = sy - syMod
 
 
