@@ -3,7 +3,7 @@ import numpy
 import cv2
 import datetime
 import time
-#import msvcrt 
+import msvcrt 
 
 def getVideo(tf, path):#Get video from path or from webcam
 	if tf == False:
