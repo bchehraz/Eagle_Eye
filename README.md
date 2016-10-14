@@ -13,6 +13,10 @@ Program Instructions:
 4. Once open, the video will play and will begin to track a moving object with a green, bounded box surround the object. 
 	a. If it is a pre-recorded video, video will stop playing once it reaches the 	end of the video. 
 	b. If using a live feed, video will continue to play until the user quits.  
+5. Use keys for change in sensitivity: 
+	“.” Increases sensitivity
+	“,” Lowers sensitivity 
+	“q” Exits video
 
 Future Work: 
 Originally we wanted to have an a way to detect little movements that aren’t important to the motion tracking, such as the wind blowing the trees, or curtains swaying in the wind, to not track that and only track important movement.
