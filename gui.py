@@ -40,8 +40,19 @@ class window(QtWidgets.QWidget):
 
 	def importBtn_clicked(self):
 		self.setGeometry(100, 100, 300, 280)
-		self.camBtn.move(200,200)
 		print ("import button was clicked")
+		d = QtWidgets.QFileDialog()
+		d.setFileMode(QtWidgets.QFileDialog.AnyFile)
+		d.setFilter("Text files (*.txt)")
+		filename = "g"	
+		if d.exec_():
+			filename = d.selectedFiles()
+			f = open(filename, 'r')
+			
+			#with f:
+			#	data = f.read()
+			#	self.contents.setText(data)
+		print (filename)
 		tracking.play(True, path, 1)
 		
 
