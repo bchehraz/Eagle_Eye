@@ -50,7 +50,7 @@ class window(QtWidgets.QWidget):
 		print ("import button was clicked")
 		d = QtWidgets.QFileDialog(self)
 		d.setFileMode(QtWidgets.QFileDialog.AnyFile)
-		d.selectNameFilter("AVI video files only (*.avi)")
+		d.selectNameFilter("AVI video files only (*.*)")
 		filename = "g"	
 		if d.exec_():
 			filename = d.selectedFiles()
