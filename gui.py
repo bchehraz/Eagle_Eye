@@ -50,12 +50,11 @@ class window(QtWidgets.QWidget):
 		print ("import button was clicked")
 		d = QtWidgets.QFileDialog(self)
 		d.setFileMode(QtWidgets.QFileDialog.AnyFile)
-		d.selectNameFilter("Py files only (*.py)")
+		d.selectNameFilter("AVI video files only (*.avi)")
 		filename = "g"	
 		if d.exec_():
 			filename = d.selectedFiles()
 		print (filename)
-		#
 		tracking.play(True, filename, 1)
 		
 
