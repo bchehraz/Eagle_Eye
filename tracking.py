@@ -3,7 +3,7 @@
 #Author: Quentin Minor
 #10/14/16
 #CST 205
-#This file handles video opening, playing, and motion tracking
+#Abstract: This file handles video opening, playing, and motion tracking
 #https://github.com/bchehraz/Eagle_Eye
 import numpy
 import cv2
